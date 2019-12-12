@@ -1,3 +1,5 @@
+//  https://www.codingame.com/training/easy/onboarding
+
 using System;
 using System.Linq;
 using System.IO;
