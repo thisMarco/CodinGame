@@ -1,0 +1,45 @@
+using System;
+using System.Linq;
+using System.IO;
+using System.Text;
+using System.Collections;
+using System.Collections.Generic;
+
+/**
+ * The while loop represents the game.
+ * Each iteration represents a turn of the game
+ * where you are given inputs (the heights of the mountains)
+ * and where you have to print an output (the index of the mountain to fire on)
+ * The inputs you are given are automatically updated according to your last actions.
+ **/
+class Player
+{
+    static void Main(string[] args)
+    {
+
+        // game loop
+        int[] mountainH = new int[8];
+        while (true)
+        {
+            for(int i = 0; i < 8; i++)
+            {
+                mountainH[i] = int.Parse(Console.ReadLine()); // represents the height of one mountain.
+            }
+
+            // Write an action using Console.WriteLine()
+            // To debug: Console.Error.WriteLine("Debug messages...");
+            
+            int higherM = mountainH[0];
+            int higherIndex = 0;
+            for(int h = 1; h < 8; h++)
+            {
+                    if(mountainH[h] > higherM)
+                    {
+                        higherM = mountainH[h];
+                        higherIndex = h;
+                    }
+            }
+            Console.WriteLine(higherIndex); // The index of the mountain to fire on.
+        }
+    }
+}
